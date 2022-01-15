@@ -4,6 +4,8 @@ services:
     build: ./front-main
   nestjs:
     build: ./server-main
+  dashboard:
+    build: ./dashboard
   nginx:
     build: ./nginx
     ports:
