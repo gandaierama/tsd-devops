@@ -6,6 +6,11 @@ export class AppController {
     constructor(private health: HealthCheckService, private http: HttpHealthIndicator) {
     }
 
+    @Get()
+    hello(){
+        return 'Hello World API!'
+    }
+
     @Get('health')
     @HealthCheck()
     check() {
