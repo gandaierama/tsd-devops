@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS `users`;
+USE `users`;
+
+-- Rest of queries
+DROP TABLE IF EXISTS `x`;
+CREATE TABLE `x` (..)
+LOCK TABLES `x` WRITE;
+INSERT INTO `x` VALUES ...;

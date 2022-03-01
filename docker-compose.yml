@@ -1,12 +1,34 @@
 version: '3'
 services:
-  nextjs:
-    build: ./front-main
+  mysql:
+      container_name: mysql
+      restart: always
+      build:
+            context: ./db
+            args:
+                - MYSQL_DATABASE=${MYSQL_DATABASE}
+                - MYSQL_USER=${MYSQL_USER}
+                - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+                - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      ports:
+            - "${MYSQL_PORT}:3306"
+      volumes:
+            - "./db/db/mysql:/var/lib/mysql"
   nestjs:
-    build: ./server-main
+    build: 
+          context: ./back-main
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   dashboard:
     build: ./dashboard
+  nextjs:
+    build: ./front-main
   nginx:
     build: ./nginx
     ports:
       - 80:80
+      - 443:443
+
