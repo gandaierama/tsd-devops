@@ -15,6 +15,9 @@ services:
       volumes:
             - "./db/db/mysql:/var/lib/mysql"
   nestjs:
+    container_name: nestjs
+    depends_on:
+      - mysql
     build: 
           context: ./back-main
           args:
@@ -23,10 +26,13 @@ services:
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   dashboard:
+    container_name: dashboard
     build: ./dashboard
   nextjs:
+    container_name: nextjs
     build: ./front-main
   nginx:
+    container_name: nginx
     build: ./nginx
     ports:
       - 80:80
