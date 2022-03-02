@@ -10,9 +10,22 @@ import { EntregaModule } from './entrega/entrega.module';
 import { OcorrenciaModule } from './ocorrencia/ocorrencia.module';
 //import { BloqueiosModule } from './bloqueios/bloqueios.module';
 import { PixModule } from './pix/pix.module';
-
+import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
-  imports: [TypeOrmModule.forRoot(), ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule],
+  imports: [TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        type: 'mysql',
+        host: configService.get('MYSQL_HOST'),
+        port: configService.get('MYSQL_PORT'),
+        username: configService.get('MYSQL_USER'),
+        password: configService.get('MYSQL_PASSWORD'),
+        database: configService.get('MYSQL_DATABASE'),
+        entities: ['dist/**/*.entity.js'],
+        synchronize: true,
+      }),
+    }), ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule],
   controllers: [AppController],
   providers: [AppService],
 })
