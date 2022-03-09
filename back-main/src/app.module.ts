@@ -12,20 +12,18 @@ import { OcorrenciaModule } from './ocorrencia/ocorrencia.module';
 import { PixModule } from './pix/pix.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
-  imports: [TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => ({
-        type: 'mysql',
-        host: 'localhost',
-        port: 3306,
-        username: configService.get('MYSQL_USER'),
-        password: configService.get('MYSQL_PASSWORD'),
-        database: configService.get('MYSQL_DATABASE'),
-        entities: ['dist/**/*.entity.js'],
-        synchronize: true,
-      }),
-    }), ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'db',
+      port: 3306,
+      username: 'root',
+      password: 'test',
+      database: 'my_db_name',
+      entities: ['dist/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),
+  ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule],
   controllers: [AppController],
   providers: [AppService],
 })

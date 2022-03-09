@@ -1,4 +1,4 @@
-FROM mysql:8.0.27
+FROM mysql:8
 RUN chown -R mysql:root /var/lib/mysql/
 
 ARG MYSQL_DATABASE

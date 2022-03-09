@@ -1,7 +1,9 @@
 version: '3'
 services:
-  mysql:
-      container_name: mysql
+  db:
+      container_name: db
+      image: mysql:8
+      command: --default-authentication-plugin=mysql_native_password
       restart: always
       build:
             context: ./db
@@ -14,10 +16,14 @@ services:
             - "${MYSQL_PORT}:3306"
       volumes:
             - "./db/db/mysql:/var/lib/mysql"
+      networks:
+        - new
   nestjs:
     container_name: nestjs
     depends_on:
-      - mysql
+      - db
+    links:
+      - db:${MYSQL_HOST}
     build: 
           context: ./back-main
           args:
@@ -25,16 +31,119 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+  sms:
+    container_name: sms
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/notification/sms
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+  email:
+    container_name: email
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/notification/email
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+  onepush:
+    container_name: onepush
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/notification/onepush
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+  facebook:
+    container_name: facebook
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/social/facebook
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+  instagram:
+    container_name: instagram
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/social/instagram
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+
+  cielo:
+    container_name: cielo
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/payment/cielo
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
+  transfeera:
+    container_name: transfeera
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/payment/transfeera
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    networks:
+      - new
   dashboard:
     container_name: dashboard
     build: ./dashboard
+    networks:
+      - new
   nextjs:
     container_name: nextjs
     build: ./front-main
+    networks:
+      - new
   nginx:
     container_name: nginx
     build: ./nginx
+    restart: always
     ports:
       - 80:80
       - 443:443
+    networks:
+      - new
+networks:
+  new:
 
