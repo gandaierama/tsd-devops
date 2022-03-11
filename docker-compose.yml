@@ -13,7 +13,7 @@ services:
                 - MYSQL_PASSWORD=${MYSQL_PASSWORD}
                 - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       ports:
-            - "${MYSQL_PORT}:3306"
+            - ${MYSQL_PORT}:3306
       volumes:
             - "./db/db/mysql:/var/lib/mysql"
       networks:
@@ -31,6 +31,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3200:3200
     networks:
       - new
   sms:
@@ -44,6 +46,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3300:3300
     networks:
       - new
   email:
@@ -57,6 +61,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3400:3400
     networks:
       - new
   onepush:
@@ -70,6 +76,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3600:3600
     networks:
       - new
   facebook:
@@ -83,6 +91,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3700:3700
     networks:
       - new
   instagram:
@@ -96,6 +106,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3800:3800
     networks:
       - new
 
@@ -110,6 +122,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 4000:4000
     networks:
       - new
   transfeera:
@@ -123,6 +137,8 @@ services:
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3900:3900
     networks:
       - new
   dashboard:
@@ -130,9 +146,13 @@ services:
     build: ./dashboard
     networks:
       - new
+    ports:
+            - 3500:3500
   nextjs:
     container_name: nextjs
     build: ./front-main
+    ports:
+            - 3000:3000
     networks:
       - new
   nginx:
