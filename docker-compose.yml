@@ -47,7 +47,7 @@ services:
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
-            - 3300:3300
+            - 3300:3200
     networks:
       - new
   email:
