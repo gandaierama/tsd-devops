@@ -1,0 +1,27 @@
+.up{
+  z-index: 999;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box{
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 7px 7px black;
+  border: 3px solid #000;
+  height: 80%;
+  margin-bottom: 50px;
+}
+
+@keyframes go-Box {
+  from {
+      transform: scale(0);
+      z-index: 6;
+  }
+  to {
+    transform: scale(1.2);
+    z-index: 1;
+    
+  }
+}

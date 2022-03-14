@@ -1,0 +1,114 @@
+.up{
+  z-index: 999;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+.bgHeader{
+	position: absolute;
+	width:  100vw;
+	height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #9525FF;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  z-index: -1;
+}
+
+.box7{
+  background-color: #fff;
+  border-radius: 40px;
+  display: absolute;
+  position: relative;
+  box-shadow: 9px 9px black;
+  border: 6px solid #000;
+  height: 95%;
+  min-height: 95%;
+  min-width: 150px;
+  width: 95%;
+  margin:2%;
+}
+.titleBox7{
+  font-family: BalginBlack;
+  color: #000;
+  height: 35%;
+  font-size: 1.2em;
+
+  padding: 15px;
+  text-align: center;
+  overflow: hidden;
+}
+.textBox7{
+  font-size: 0.7em;
+  color: #000;
+  height: 75%;
+  padding: 35px;
+  text-align: center;
+}
+
+.bolas{ 
+	position: absolute;
+ 
+	background-position: center center;
+	background-repeat: no-repeat;
+	animation: 2.8s go-headerBg linear infinite;
+	align-self: center center;
+  width: 300px;
+  height: 210px;
+  background-size: contain;
+  transform-origin: center;
+}
+
+
+.bola4{
+  background-image: url(../../../public/images/bgHeader1.svg);
+  z-index: 4;
+  animation-delay: 1.3s;
+  width: 600px;
+  height: 421px;
+
+}
+.bola3{
+	background-image: url(../../../public/images/bgHeader2.svg);
+  animation-delay: 0.9s;
+  z-index: 3;
+  width: 700px;
+  height: 491px;
+	
+
+}
+.bola2{
+	background-image: url(../../../public/images/bgHeader1.svg);
+  animation-delay: 0.5s;
+	z-index: 2;
+  width: 800px;
+  height: 561px;
+
+
+}
+.bola1{
+  background-image: url(../../../public/images/bgHeader2.svg);
+  z-index: 1;
+  animation-delay: 0.1s;
+  width: 1000px;
+  height: 702px;
+ 
+}
+
+
+@keyframes go-headerBg {
+  from {
+
+      transform: rotate(0deg) scale(0);
+      z-index: 6;
+  
+  }
+  to {
+    transform: rotate(240deg) scale(5);
+    z-index: 1;
+    
+  }
+}

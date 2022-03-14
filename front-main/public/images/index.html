@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/css">
+	  	.tela{
+	  		width: 100%;
+	  		height: 100%;
+	  		background: #023AEC;
+	  	}
+
+	  	#parallax {
+	  position: relative;
+	  width: 100%;
+	  height: 100vh;
+	  background-image: url(./paraJ01.svg), url(./paraJ02.svg), url(./paraJ03.svg);
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-position: 50% 50%;
+	}
+  </style>
+  
+
+</head>
+<body>
+  <div class="tela">
+  	<div id="parallax">
+  	</div>
+  </div>
+</body>
+</html>
+
+<script>
+  	(function() {
+	    // Add event listener
+	    document.addEventListener("mousemove", parallax);
+	    const elem = document.querySelector("#parallax");
+	    // Magic happens here
+	    function parallax(e) {
+	        let _w = window.innerWidth/2;
+	        let _h = window.innerHeight/2;
+	        let _mouseX = e.clientX;
+	        let _mouseY = e.clientY;
+	        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+	        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+	        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+	        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+	        console.log(x);
+	        elem.style.backgroundPosition = x;
+	    }
+
+	})();
+  </script>
