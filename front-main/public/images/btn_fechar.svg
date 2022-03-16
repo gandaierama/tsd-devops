@@ -1,7 +1,0 @@
-<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="btn_fechar">
-<rect id="Rectangle 191" x="11.5" y="11.5" width="67" height="67" rx="23.5" fill="#0A0A0A" stroke="black" stroke-width="3"/>
-<rect id="Rectangle 192" x="1.5" y="1.5" width="67" height="67" rx="23.5" fill="white" stroke="black" stroke-width="3"/>
-<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M29.4997 35.0873L18.3027 46.2843L23.606 51.5876L34.803 40.3906L46.2843 51.8718L51.5876 46.5685L40.1063 35.0873L51.8903 23.3033L46.587 18L34.803 29.784L23.3033 18.2843L18 23.5876L29.4997 35.0873Z" fill="black"/>
-</g>
-</svg>
