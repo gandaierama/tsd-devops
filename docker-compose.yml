@@ -52,8 +52,8 @@ services:
   #     - new
   email:
     container_name: email
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build: 
           context: ./microservices/notification/email
           args:
@@ -82,8 +82,8 @@ services:
       - new
   facebook:
     container_name: facebook
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build: 
           context: ./microservices/social/facebook
           args:
@@ -97,8 +97,8 @@ services:
       - new
   instagram:
     container_name: instagram
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build: 
           context: ./microservices/social/instagram
           args:
@@ -113,8 +113,8 @@ services:
 
   cielo:
     container_name: cielo
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build: 
           context: ./microservices/payment/cielo
           args:
@@ -128,8 +128,8 @@ services:
       - new
   transfeera:
     container_name: transfeera
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build: 
           context: ./microservices/payment/transfeera
           args:
