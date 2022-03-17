@@ -67,8 +67,8 @@ services:
       - new
   onepush:
     container_name: onepush
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
     build: 
           context: ./microservices/notification/onepush
           args:
