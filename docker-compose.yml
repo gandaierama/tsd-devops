@@ -18,38 +18,38 @@ services:
             - "./db/db/mysql:/var/lib/mysql"
       networks:
         - new
-  nestjs:
-    container_name: nestjs
-    depends_on:
-      - db
-    links:
-      - db:${MYSQL_HOST}
-    build: 
-          context: ./back-main
-          args:
-              - MYSQL_DATABASE=${MYSQL_DATABASE}
-              - MYSQL_USER=${MYSQL_USER}
-              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    ports:
-            - 3200:3200
-    networks:
-      - new
-  # sms:
-  #   container_name: sms
+  # nestjs:
+  #   container_name: nestjs
   #   depends_on:
   #     - db
+  #   links:
+  #     - db:${MYSQL_HOST}
   #   build: 
-  #         context: ./microservices/notification/sms
+  #         context: ./back-main
   #         args:
   #             - MYSQL_DATABASE=${MYSQL_DATABASE}
   #             - MYSQL_USER=${MYSQL_USER}
   #             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
   #             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
   #   ports:
-  #           - 3300:3200
+  #           - 3200:3200
   #   networks:
   #     - new
+  sms:
+    container_name: sms
+    depends_on:
+      - db
+    build: 
+          context: ./microservices/notification/sms
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3300:3200
+    networks:
+      - new
   email:
     container_name: email
     depends_on:
