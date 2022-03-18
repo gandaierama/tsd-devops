@@ -1,40 +1,41 @@
 version: '3'
 services:
-  # db:
-  #     container_name: db
-  #     image: mysql:8
-  #     command: --default-authentication-plugin=mysql_native_password
-  #     restart: always
-  #     build:
-  #           context: ./db
-  #           args:
-  #               - MYSQL_DATABASE=${MYSQL_DATABASE}
-  #               - MYSQL_USER=${MYSQL_USER}
-  #               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-  #               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-  #     ports:
-  #           - ${MYSQL_PORT}:3306
-  #     volumes:
-  #           - "./db/db/mysql:/var/lib/mysql"
-  #     networks:
-  #       - new
-  # nestjs:
-  #   container_name: nestjs
-  #   depends_on:
-  #     - db
-  #   links:
-  #     - db:${MYSQL_HOST}
-  #   build: 
-  #         context: ./back-main
-  #         args:
-  #             - MYSQL_DATABASE=${MYSQL_DATABASE}
-  #             - MYSQL_USER=${MYSQL_USER}
-  #             - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-  #             - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-  #   ports:
-  #           - 3200:3200
-  #   networks:
-  #     - new
+  db:
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    build:
+          context: ./db
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+          - ${MYSQL_PORT}:3306
+    command: --innodb-use-native-aio=0
+    volumes:
+          - "./db/db/:/var/lib/mysql"
+    networks:
+      - new
+  nestjs:
+    container_name: nestjs
+    depends_on:
+      - db
+    stdin_open: true
+    links:
+      - db
+    build: 
+          context: ./back-main
+          args:
+              - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_USER=${MYSQL_USER}
+              - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+              - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+            - 3200:3200
+    networks:
+      - new
   # sms:
   #   container_name: sms
   #   depends_on:
@@ -52,8 +53,8 @@ services:
   #     - new
   email:
     container_name: email
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     build: 
           context: ./microservices/notification/email
           args:
@@ -67,8 +68,8 @@ services:
       - new
   onepush:
     container_name: onepush
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     build: 
           context: ./microservices/notification/onepush
           args:
@@ -82,8 +83,8 @@ services:
       - new
   facebook:
     container_name: facebook
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     build: 
           context: ./microservices/social/facebook
           args:
@@ -113,8 +114,8 @@ services:
 
   cielo:
     container_name: cielo
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     build: 
           context: ./microservices/payment/cielo
           args:
@@ -128,8 +129,8 @@ services:
       - new
   transfeera:
     container_name: transfeera
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     build: 
           context: ./microservices/payment/transfeera
           args:

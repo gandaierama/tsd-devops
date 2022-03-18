@@ -1,6 +1,9 @@
 FROM mysql:8
 RUN chown -R mysql:root /var/lib/mysql/
 
+
+COPY mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.conf
+
 ARG MYSQL_DATABASE
 ARG MYSQL_USER
 ARG MYSQL_PASSWORD
