@@ -17,7 +17,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       type: 'mysql',
       host: 'db',
       port: 3306,
-      username: 'root',
+      username: 'user_test',
       password: 'test',
       database: 'my_db_name',
       entities: ['dist/**/*.entity{.ts,.js}'],

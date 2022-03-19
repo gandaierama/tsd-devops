@@ -12,7 +12,7 @@ services:
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
-          - ${MYSQL_PORT}:3306
+      - ${MYSQL_PORT}:3306
     command: --innodb-use-native-aio=0
     volumes:
           - "./db/db/:/var/lib/mysql"
@@ -98,8 +98,8 @@ services:
       - new
   instagram:
     container_name: instagram
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     build: 
           context: ./microservices/social/instagram
           args:
@@ -108,7 +108,7 @@ services:
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
-            - 3800:3800
+      - 3800:3800
     networks:
       - new
 
@@ -124,7 +124,7 @@ services:
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     ports:
-            - 4000:4000
+      - 4000:4000
     networks:
       - new
   transfeera:
@@ -148,12 +148,12 @@ services:
     networks:
       - new
     ports:
-            - 3500:3500
+      - 3500:3500
   nextjs:
     container_name: nextjs
     build: ./front-main
     ports:
-            - 3000:3000
+      - 3000:3000
     networks:
       - new
   nginx:

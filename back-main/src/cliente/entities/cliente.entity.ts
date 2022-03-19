@@ -10,4 +10,12 @@ export class ClienteEntity {
 
     @Column({length: 65})
     email: string
+
+    @Column({length: 65})
+    telefone: string
+
+    @Column({length: 65})
+    cpf: string
+
+
 }
