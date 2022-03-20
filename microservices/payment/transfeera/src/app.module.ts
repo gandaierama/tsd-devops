@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { LoteModule } from './lote/lote.module';
 import { ContaModule } from './conta/conta.module';
 import { FechamentoModule } from './fechamento/fechamento.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 
 @Module({
   imports: [LoteModule, ContaModule, FechamentoModule],

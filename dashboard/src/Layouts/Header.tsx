@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             {
               content: (
                 <Link href="/">
-                  <a className="logo">Admin TvBox</a>
+                  <a className="logo">Admin TSD</a>
                 </Link>
               ),
             }
@@ -87,7 +87,6 @@ const Header: React.FC<HeaderProps> = (props) => {
                   items={[
                     { title: 'Perfil', link: { href: '/modal-overlays/tooltip' } },
                     { title: 'Manual', link: { href: '/modal-overlays/tooltip' } },
-                    { title: 'Baixar APK', link: { href: '/modal-overlays/tooltip' } },
                     { title: 'Sair', link: { href: '/logout' } },
                   ]}
                   Link={Link}

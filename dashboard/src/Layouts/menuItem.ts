@@ -11,17 +11,27 @@ const items: MenuItemType[] = [
     group: true,
   },
   {
-    title: 'Pontos',
+    title: 'Clientes',
     icon: { name: 'home' },
     link: { href: '/dashboard' },
   },
   {
-    title: 'Conteúdo',
+    title: 'Motoboys',
     icon: { name: 'home' },
     link: { href: '/dashboard' },
   },
   {
-    title: 'PlayList',
+    title: 'Pedidos',
+    icon: { name: 'home' },
+    link: { href: '/dashboard' },
+  },
+  {
+    title: 'Pagamentos',
+    icon: { name: 'home' },
+    link: { href: '/dashboard' },
+  },
+  {
+    title: 'Ocorrências',
     icon: { name: 'home' },
     link: { href: '/dashboard' },
   },

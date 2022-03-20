@@ -25,7 +25,7 @@ const Hero = () => (
         button={
           <Link href="">
             <a>
-              <Button xl mb-3 >Baixe o app agora</Button>
+              <Button xl >Baixe o app agora</Button>
             </a>
           </Link>
         }
