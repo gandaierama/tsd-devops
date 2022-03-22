@@ -9,14 +9,24 @@ import { ClienteEntity } from './entities/cliente.entity';
 
 @Injectable()
 export class ClienteService {
-
   constructor(
     @InjectRepository(ClienteEntity)
     private clienteRepository: Repository<ClienteEntity>,
   ) {}
 
-  create(createClienteDto: CreateClienteDto) {
-    return 'This action adds a new cliente';
+  create(createClienteDto: CreateClienteDto): Promise<ClienteEntity> {
+    const obje = new ClienteEntity();
+    obje.name = createClienteDto.name;
+    obje.email = createClienteDto.email;
+    obje.telefone = createClienteDto.telefone;
+    obje.cpf = createClienteDto.cpf;
+    obje.cnpj = createClienteDto.cnpj;
+
+    return this.clienteRepository.save(obje);
+  }
+
+  update(id: string, updateOrdemDto: UpdateClienteDto) {
+    return `This action updates a #${id} ordem`;
   }
 
   findAll(): Promise<ClienteEntity[]> {
