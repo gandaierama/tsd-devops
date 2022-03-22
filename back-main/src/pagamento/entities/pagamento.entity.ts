@@ -9,5 +9,17 @@ export class PagamentoEntity {
     name: string
 
     @Column({length: 65})
-    email: string
+    valor: string
+
+    @Column('uuid')
+    motoboy: string
+
+    @Column({length: 65})
+    date: string
+
+    @Column()
+    description: string
+
+    @Column('uuid')
+    user: string
 }

@@ -8,6 +8,23 @@ export class OrdemEntity {
     @Column({length: 65})
     name: string
 
+    @Column('uuid')
+    cliente: string
+
+    @Column('uuid')
+    date: string
+
     @Column({length: 65})
-    email: string
+    periodo: string
+
+    @Column({length: 65})
+    days: string
+
+    @Column({length: 65})
+    diaria: string
+
+    @Column({length: 65})
+    entrega: string
+
+
 }

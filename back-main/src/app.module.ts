@@ -11,6 +11,7 @@ import { OcorrenciaModule } from './ocorrencia/ocorrencia.module';
 //import { BloqueiosModule } from './bloqueios/bloqueios.module';
 import { PixModule } from './pix/pix.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { PeriodoModule } from './periodo/periodo.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -23,7 +24,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-  ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule],
+  ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule, PeriodoModule],
   controllers: [AppController],
   providers: [AppService],
 })

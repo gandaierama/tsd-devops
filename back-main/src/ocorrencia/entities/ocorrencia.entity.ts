@@ -9,5 +9,9 @@ export class OcorrenciaEntity {
     name: string
 
     @Column({length: 65})
-    email: string
+    description: string
+
+
+    @Column('uuid')
+    motoboy: string
 }
