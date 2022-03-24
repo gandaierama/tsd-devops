@@ -1,4 +1,4 @@
-
+import React from "react";
 import { Footer } from './Footer';
 import { Hero } from './Hero';
 import { Text1 } from './Text1';
@@ -9,8 +9,7 @@ import { AppConfig } from '../utils/AppConfig';
 import { Meta } from '../layout/Meta';
 import { Logo } from './Logo';
 import Link from 'next/link';
-
-import React from "react";
+import api from "../service/api";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Head from 'next/head'
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
@@ -21,8 +20,7 @@ const pluginWrapper = () => {
   * require('../static/fullpage.scrollHorizontally.min.js'); // Optional. Required when using the "scrollHorizontally" extension.
   */
 };
-
-
+ 
 const originalColors = ['#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc' ];
 
 class App extends React.Component {
@@ -30,6 +28,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       sectionsColor: [...originalColors],
+      emailLogin: "sd",
+      passLogin: "sdf",
       fullpages: [
         {
           text: "Section 1"
@@ -43,6 +43,30 @@ class App extends React.Component {
       ]
     };
   }
+ 
+  onLogin(state) {
+
+    const email = state;
+    console.log(email);
+    // api
+    //   .post("/user",{
+    //          email: email,
+    //          senha: email
+    //   })
+    //  .then((response) => {console.log(response.data);})
+    //  .catch((err) => {
+    //    console.error("ops! ocorreu um erro" + err);
+    //  });
+    
+  }  
+
+  handleEmail(){
+
+  }
+  handleSenha(){
+
+  }
+  
 
   onLeave(origin, destination, direction) {
     console.log("onLeave", { origin, destination, direction });
@@ -92,6 +116,9 @@ class App extends React.Component {
   render() {
     const { fullpages } = this.state;
 
+
+
+
     if (!fullpages.length) {
       return null;
     }
@@ -116,9 +143,9 @@ class App extends React.Component {
           </Link>
         </li>
         <li>
-          <Link href="/">
-            <a>Login</a>
-          </Link>
+          
+            <a  href={this.onLogin(this.state.emailLogin)}>Login</a>
+     
         </li>
       </NavbarTwoColumns>
 

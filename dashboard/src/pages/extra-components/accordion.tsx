@@ -14,7 +14,7 @@ const Accordions = () => {
 
   const items: ActionType[] = [
     {
-      content: 'Total de Pontos',
+      content: 'Total de Motoboys disponíveis',
       badge: {
         status: 'Primary',
         title: '4',
@@ -25,7 +25,7 @@ const Accordions = () => {
 
   const items2: ActionType[] = [
     {
-      content: 'Pontos Ativos',
+      content: 'Pontos Pedidos do dia',
       badge: {
         status: 'Danger',
         title: '3',
@@ -37,7 +37,7 @@ const Accordions = () => {
 
   const items3: ActionType[] = [
     {
-      content: 'Playlists ativas',
+      content: 'Total de Entregas do dia',
       badge: {
         status: 'Warning',
         title: '3',
@@ -54,7 +54,7 @@ const Accordions = () => {
             <CardBody>
               <Row>
                 <Col style={style} breakPoint={{ xs: 12, lg: 4 }}>
-                  Total Pontos 
+                  Motoboys
                   <Card>
             <CardBody>
               <Actions Link={Link} size="Large" actions={items} />
@@ -62,7 +62,7 @@ const Accordions = () => {
           </Card>
                 </Col>
                 <Col style={style} breakPoint={{ xs: 12, lg: 4 }}>
-                  Pontos ativos
+                  Pedidos
                   <Card>
             <CardBody>
               <Actions Link={Link} size="Large" actions={items2} />
@@ -70,7 +70,7 @@ const Accordions = () => {
           </Card>
                 </Col>
                 <Col style={style} breakPoint={{ xs: 12, lg: 4 }}>
-                  Playlist
+                  Clientes
                   <Card>
             <CardBody>
               <Actions Link={Link} size="Large" actions={items3} />

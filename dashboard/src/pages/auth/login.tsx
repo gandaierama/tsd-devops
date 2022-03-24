@@ -11,9 +11,14 @@ export default function Login() {
   const onCheckbox = () => {
     // v will be true or false
   };
+
+
+  const onLogin = () => {
+    
+  };
   return (
-    <Layout title="TvBox">
-      <Auth title="TvBox" subTitle="Bem vindo! entre com seu e-mail">
+    <Layout title="TSD Motoboys">
+      <Auth title="TSD" subTitle="Bem vindo! entre com seu e-mail">
         <form>
           <InputGroup fullWidth>
             <input type="email" placeholder="E-mail" />
@@ -29,7 +34,7 @@ export default function Login() {
               <a>Esqueci a senha</a>
             </Link>
           </Group>
-          <Button status="Success" type="button" shape="SemiRound" fullWidth>
+          <Button status="Success" onClick={onLogin} type="button" shape="SemiRound" fullWidth>
             Login
           </Button>
         </form>

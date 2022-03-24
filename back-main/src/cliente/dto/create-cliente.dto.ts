@@ -1,19 +1,19 @@
 import { ApiProperty } from '@nestjs/swagger';
 export class CreateClienteDto {
 
-	@ApiProperty({ required: true, default: null })
+	@ApiProperty({ required: true, default: "Daniel" })
   	name: string;
 
-  	@ApiProperty({ required: false, default: null })
+  	@ApiProperty({ required: false, default: "daniel@teste.com" })
   	email: string;
 
-  	@ApiProperty({ required: false, default: null })
+  	@ApiProperty({ required: false, default: "99999999999" })
   	cpf: string;
 
-  	@ApiProperty({ required: false, default: null })
+  	@ApiProperty({ required: false, default: "99999999999999" })
   	cnpj: string;
 
-  	@ApiProperty({ required: false, default: null })
+  	@ApiProperty({ required: false, default: "991254789645" })
   	telefone: string;
 
     @ApiProperty({ required: false, default: null })

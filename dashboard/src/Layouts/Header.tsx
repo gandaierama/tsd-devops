@@ -86,7 +86,6 @@ const Header: React.FC<HeaderProps> = (props) => {
                   currentPath={router.pathname}
                   items={[
                     { title: 'Perfil', link: { href: '/modal-overlays/tooltip' } },
-                    { title: 'Manual', link: { href: '/modal-overlays/tooltip' } },
                     { title: 'Sair', link: { href: '/logout' } },
                   ]}
                   Link={Link}
