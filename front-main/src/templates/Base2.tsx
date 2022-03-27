@@ -7,6 +7,8 @@ import Link from 'next/link';
 import api from "../service/api";
 import Head from 'next/head'
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
+import { Background } from '../background/Background';
+import { Section } from '../layout/Section';
 
 const originalColors = ['#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc', '#f7fafc' ];
 
@@ -86,11 +88,9 @@ class App extends React.Component {
       <div className="App">
         <Meta title="Política de Privacidade" description={AppConfig.description} />
         <Menu />
-        <div style={{
-          width: '100vw',
-          padding: '150px 30px',
-          textAlign: 'justify'
-        }}>
+          <Background color="bg-gray-100 h-100">
+
+    <Section >
 
         <h1>Política de privacidade</h1>
         <hr/>
@@ -377,8 +377,11 @@ class App extends React.Component {
 <p>Tel.: (11) 5574-0808</p>
 
 <p>E-mail: contato@tsdmotoboys.com.br</p>
-        </div>
+     </Section>
+  </Background>
       </div>
+
+
     );
   }
 }
