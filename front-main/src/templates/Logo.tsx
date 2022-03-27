@@ -11,7 +11,7 @@ const Logo = (props: ILogoProps) => {
 
   return (
     <span className={`text-gray-900 inline-flex items-center ${fontStyle}`}>
-      <img src="./assets/images/logo_tsd_2022.png" width={size} />
+      <img src="http://tsdmotoboys.com.br/assets/images/logo_tsd_2022.png" width={size} />
 
   
     </span>

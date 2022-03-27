@@ -61,7 +61,7 @@ class App extends React.Component {
           top: 0,
           zIndex: 100,
           width: '100vw',
-          padding: '100px 30px'
+          padding: '0 30px'
 
         }}
       >
@@ -91,7 +91,15 @@ class App extends React.Component {
           <Background color="bg-gray-100 h-100">
 
     <Section >
+        <div style={{
+          position: "fixed",
+          top: 0,
+          zIndex: 100,
+          width: '100vw',
+          padding: '100px 30px',
+          textAlign: 'center'
 
+        }}>
         <h1>Política de privacidade</h1>
         <hr/>
         <p>Na TSD Motoboys Delivery privacidade e segurança são prioridades e por isso nos comprometemos com a transparência do tratamento de dados pessoais dos nossos usuários/clientes.</p>
