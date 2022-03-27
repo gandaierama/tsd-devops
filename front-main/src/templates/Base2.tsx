@@ -31,7 +31,7 @@ class App extends React.Component {
     };
   }
   
-   
+
   onLogin(state) {
 
     const email = state;
@@ -59,7 +59,7 @@ class App extends React.Component {
           top: 0,
           zIndex: 100,
           width: '100vw',
-          padding: '0 30px'
+          padding: '100px 30px'
 
         }}
       >
@@ -84,9 +84,16 @@ class App extends React.Component {
     return (
 
       <div className="App">
-        <Meta title={AppConfig.title} description={AppConfig.description} />
+        <Meta title="Política de Privacidade" description={AppConfig.description} />
         <Menu />
-        <div>
+        <div style={{
+          width: '100vw',
+          padding: '0 30px',
+          textAlign: 'center'
+        }}>
+
+        <h1>Política de privacidade</h1>
+        <hr/>
         <p>Na TSD Motoboys Delivery privacidade e segurança são prioridades e por isso nos comprometemos com a transparência do tratamento de dados pessoais dos nossos usuários/clientes.</p>
 
 <p>Desta forma, a presente Política de Privacidade tem por objetivo detalhar a forma de coleta, uso e transferência de informações de clientes ou outras pessoas que acessam ou utilizam nosso site/aplicativo.</p>

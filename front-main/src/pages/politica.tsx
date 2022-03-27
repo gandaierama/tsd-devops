@@ -1,5 +1,5 @@
 import Base2 from '../templates/Base2';
 
-const Index = () => <Base2 />;
+const Politica = () => <Base2 />;
 
-export default Index;
+export default Politica;
