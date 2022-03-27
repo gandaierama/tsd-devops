@@ -1,16 +1,17 @@
 import Link from 'next/link';
 
 import { Background } from '../background/Background';
-import { Button } from '../button/Button';
+import { Button, Container } from 'react-bootstrap';
 import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 
 
 
 const Hero = () => (
-  <Background color="bg-gray-100 h-100">
+  <Background color="bg-gray-100">
 
-    <Section >
+    <Section className="h-100" >
+    <Container >
       <div className="inline-flex items-center w-full justify-center">
         <img src="./assets/images/logo_tsd_2022.png" width="400" />
       </div>
@@ -25,12 +26,14 @@ const Hero = () => (
         button={
           <Link href="">
             <a>
-              <Button xl >Baixe o app agora</Button>
+              <Button  >Baixe o app agora</Button>
             </a>
           </Link>
         }
       />
-    </Section>
+    
+  </Container >
+  </Section>
   </Background>
 );
 

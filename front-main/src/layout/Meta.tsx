@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-
+import Script from "next/script"
 import { AppConfig } from '../utils/AppConfig';
 
 type IMetaProps = {
@@ -46,7 +46,12 @@ const Meta = (props: IMetaProps) => {
           href={`${router.basePath}/favicon.ico`}
           key="favicon"
         />
+
       </Head>
+      <Script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+crossorigin="anonymous"/>
       <NextSeo
         title={props.title}
         description={props.description}

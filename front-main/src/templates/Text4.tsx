@@ -1,16 +1,17 @@
 import Link from 'next/link';
 
 import { Background } from '../background/Background';
-import { Button } from '../button/Button';
+import { Button, Container } from 'react-bootstrap';
 import { HeroOneButton } from '../hero/HeroOneButton';
 import { Section } from '../layout/Section';
 
 
 
 const Text4 = () => (
-  <Background color="bg-gray-100 h-100">
+  <Background color="bg-gray-100">
 
-    <Section >
+    <Section className="h-100" >
+    <Container >
 
       <HeroOneButton
         title={
@@ -24,12 +25,13 @@ const Text4 = () => (
         button={
           <Link href="">
             <a>
-              <Button xl mb-3 >Baixe o app agora</Button>
+              <Button  >Baixe o app agora</Button>
             </a>
           </Link>
         }
       />
-    </Section>
+    </Container >
+  </Section>
   </Background>
 );
 

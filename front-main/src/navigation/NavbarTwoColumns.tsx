@@ -8,7 +8,7 @@ type INavbarProps = {
 };
 
 const NavbarTwoColumns = (props: INavbarProps) => (
-  <div className="w-full flex flex-wrap justify-between items-center">
+  <div className="flex flex-wrap justify-between items-center">
     <div>
       <Link href="/">
         <a>{props.logo}</a>
@@ -26,7 +26,6 @@ const NavbarTwoColumns = (props: INavbarProps) => (
         .navbar :global(li:not(:first-child)) {
           @apply mt-0;
         }
-
         .navbar :global(li:not(:last-child)) {
           @apply mr-5;
         }
