@@ -92,12 +92,8 @@ class App extends React.Component {
 
     <Section >
         <div style={{
-          position: "fixed",
-          top: 0,
-          zIndex: 100,
-          width: '100vw',
-          padding: '100px 30px',
-          textAlign: 'center'
+          padding: '100px 0',
+          textAlign: 'justify'
 
         }}>
         <h1>Política de privacidade</h1>
