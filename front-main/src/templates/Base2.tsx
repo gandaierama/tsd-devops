@@ -88,8 +88,8 @@ class App extends React.Component {
         <Menu />
         <div style={{
           width: '100vw',
-          padding: '0 30px',
-          textAlign: 'center'
+          padding: '150px 30px',
+          textAlign: 'justify'
         }}>
 
         <h1>Política de privacidade</h1>
