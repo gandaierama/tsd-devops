@@ -385,6 +385,7 @@ class App extends React.Component {
 <p>Tel.: (11) 5574-0808</p>
 
 <p>E-mail: contato@tsdmotoboys.com.br</p>
+</div>
      </Section>
   </Background>
       </div>
