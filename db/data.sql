@@ -22,6 +22,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'test';
 -- Table structure for table `offices`
 --
 
+
+
+
 CREATE TABLE `offices` (
    `id` int(10) UNSIGNED NOT NULL,
    `city` varchar(64) NOT NULL DEFAULT '',

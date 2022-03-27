@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateOrderDto {
+export class CreatePagamentoDto {
 
 	@ApiProperty({ required: true, default: null })
   	name: string;

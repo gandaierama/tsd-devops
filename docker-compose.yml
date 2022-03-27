@@ -8,6 +8,8 @@ services:
           context: ./db
           args:
               - MYSQL_DATABASE=${MYSQL_DATABASE}
+              - MYSQL_DATABASE_EMAIL=${MYSQL_DATABASE_EMAIL}
+              - MYSQL_DATABASE_ONEPUSH=${MYSQL_DATABASE_ONEPUSH}
               - MYSQL_USER=${MYSQL_USER}
               - MYSQL_PASSWORD=${MYSQL_PASSWORD}
               - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
