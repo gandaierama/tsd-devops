@@ -11,7 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
       port: 3306,
       username: 'user_test',
       password: 'test',
-      database: 'onepush',
+      database: 'db_onepush',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
