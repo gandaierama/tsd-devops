@@ -8,7 +8,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 
 @Module({
-  imports: [LoteModule, ContaModule, FechamentoModule],
+  imports: [TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'db',
+      port: 3306,
+      username: 'user_test',
+      password: 'test',
+      database: 'db_transfeera',
+      entities: ['dist/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),LoteModule, ContaModule, FechamentoModule],
   controllers: [AppController],
   providers: [AppService],
 })

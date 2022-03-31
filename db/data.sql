@@ -18,11 +18,21 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'test';
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+
+CREATE DATABASE IF NOT EXISTS `db_email`;
+CREATE DATABASE IF NOT EXISTS `db_onepush`;
+CREATE DATABASE IF NOT EXISTS `db_sms`;
+
+CREATE DATABASE IF NOT EXISTS `db_google`;
+CREATE DATABASE IF NOT EXISTS `db_instagram`;
+CREATE DATABASE IF NOT EXISTS `db_facebook`;
+CREATE DATABASE IF NOT EXISTS `db_tiktok`;
+
+CREATE DATABASE IF NOT EXISTS `db_cielo`;
+CREATE DATABASE IF NOT EXISTS `db_transfeera`;
 --
 -- Table structure for table `offices`
 --
-
-
 
 
 CREATE TABLE `offices` (
