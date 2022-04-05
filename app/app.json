@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "app-tsd",
-    "slug": "app-tsd",
+    "name": "tsd-app2",
+    "slug": "tsd-app-1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,10 +23,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.gandaierama.tsdapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }
