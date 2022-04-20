@@ -3,7 +3,6 @@ import { MotoboyService } from './motoboy.service';
 import { CreateMotoboyDto } from './dto/create-motoboy.dto';
 import { UpdateMotoboyDto } from './dto/update-motoboy.dto';
 
-
 @Controller('motoboy')
 export class MotoboyController {
   constructor(private readonly motoboyService: MotoboyService) {}
