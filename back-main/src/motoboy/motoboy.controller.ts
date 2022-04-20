@@ -19,16 +19,16 @@ export class MotoboyController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.motoboyService.findOne(+id);
+    return this.motoboyService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateMotoboyDto: UpdateMotoboyDto) {
-    return this.motoboyService.update(+id, updateMotoboyDto);
+    return this.motoboyService.update(id, updateMotoboyDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.motoboyService.remove(+id);
+    return this.motoboyService.remove(id);
   }
 }
