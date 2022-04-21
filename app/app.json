@@ -4,7 +4,7 @@
     "slug": "tsd-app-1",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon1.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -17,18 +17,42 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gandaierama.tsdapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CALL_PHONE",
+        "INTERNET",
+        "MANAGE_MEDIA",
+        "READ_CALENDAR",
+        "READ_SMS",
+        "RECEIVE_SMS",
+        "SEND_SMS",
+        "VIBRATE",
+        "WRITE_CALENDAR"
+      ],
       "package": "com.gandaierama.tsdapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon1.png"
     },
-    "description": ""
+    "plugins": [
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development"
+        }
+      ]
+    ],
+    "description": "App TSD"
   }
 }
