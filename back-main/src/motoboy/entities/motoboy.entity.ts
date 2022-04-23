@@ -8,36 +8,41 @@ export class MotoboyEntity {
     @Column({length: 65, default: "Teste"})
     name: string
 
-    @Column({length: 65, default: "ghost@texte.com"})
-    email: string
-
-    @Column({length: 65, default: "11989445477" })
-    telefone: string
-
-    @Column({length: 65, default: "30086789045" })
-    cpf: string
-
     @Column({length: 65, default: "1200020030400" })
     cnpj: string
 
-    @Column({length: 65, default: "-100" })
+    @Column({length: 65, default: "ghost@texte.com", nullable: false})
+    email: string
+    @Column({length: 65, default: "", nullable: false})
+    senha: string
+
+    @Column({length: 65, default: "", nullable: true })
+    telefone: string
+
+    @Column({length: 65, default: "", nullable: true })
+    cpf: string
+
+    @Column({length: 65, default: "", nullable: true })
+    cnpj: string
+
+    @Column({length: 65, default: "", nullable: true })
     latitude: string
 
-    @Column({length: 65, default: "-200" })
+    @Column({length: 65, default: "", nullable: true })
     longitude: string
 
-    @Column({length: 65, default: "rua teste"})
+    @Column({length: 65, default: "", nullable: true})
     endereco: string
 
-    @Column({length: 65, default: "bairro" })
+    @Column({length: 65, default: "", nullable: true })
     bairro: string
 
-    @Column({length: 65, default: "cidade" })
+    @Column({length: 65, default: "", nullable: true })
     cidade: string
 
-    @Column({length: 2, default: "sp" })
+    @Column({length: 2, default: "", nullable: true })
     estado: string
 
-    @Column({length: 65, default: "33" })
+    @Column({length: 65, default: "", nullable: true })
     numero: string
-}
+    

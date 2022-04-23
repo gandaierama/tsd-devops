@@ -10,35 +10,37 @@ export class ClienteEntity {
 
     @Column({length: 65, default: "ghost@texte.com", nullable: false})
     email: string
+    @Column({length: 65, default: "", nullable: false})
+    senha: string
 
-    @Column({length: 65, default: "11989445477", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     telefone: string
 
-    @Column({length: 65, default: "30086789045", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     cpf: string
 
-    @Column({length: 65, default: "1200020030400", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     cnpj: string
 
-    @Column({length: 65, default: "-100", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     latitude: string
 
-    @Column({length: 65, default: "-200", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     longitude: string
 
-    @Column({length: 65, default: "rua teste", nullable: true})
+    @Column({length: 65, default: "", nullable: true})
     endereco: string
 
-    @Column({length: 65, default: "bairro", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     bairro: string
 
-    @Column({length: 65, default: "cidade", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     cidade: string
 
-    @Column({length: 2, default: "sp", nullable: true })
+    @Column({length: 2, default: "", nullable: true })
     estado: string
 
-    @Column({length: 65, default: "33", nullable: true })
+    @Column({length: 65, default: "", nullable: true })
     numero: string
     
 }
