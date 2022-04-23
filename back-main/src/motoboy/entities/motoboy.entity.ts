@@ -8,8 +8,7 @@ export class MotoboyEntity {
     @Column({length: 65, default: "Teste"})
     name: string
 
-    @Column({length: 65, default: "1200020030400" })
-    cnpj: string
+
 
     @Column({length: 65, default: "ghost@texte.com", nullable: false})
     email: string
@@ -46,3 +45,4 @@ export class MotoboyEntity {
     @Column({length: 65, default: "", nullable: true })
     numero: string
     
+}
