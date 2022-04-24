@@ -29,6 +29,14 @@ export class MotoboyService {
     return this.motoboyRepository.save(obje);
   }
 
+  async login(email: string, senha: string): Promise<any> {
+    const user = await this.motoboyRepository.findOne(email);
+    if (user && user.senha === senha) {
+      const { senha, ...result } = user;
+      return result;
+    }
+    return null;
+  }
   update(id: string, updateOrdemDto: UpdateMotoboyDto) {
     return `This action updates a #${id} ordem`;
   }
