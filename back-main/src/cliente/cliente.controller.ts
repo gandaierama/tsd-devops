@@ -18,8 +18,8 @@ export class ClienteController {
   }
 
   @Post()
-  create(@Body() body) {
-    return this.clienteService.create(body);
+  login(@Body() email: string, senha: string) {
+    return this.clienteService.create(email, senha);
   }
 
   @Get(':id')

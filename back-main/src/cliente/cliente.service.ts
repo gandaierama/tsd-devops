@@ -15,7 +15,7 @@ export class ClienteService {
   ) {}
 
 
-  async validateUser(email: string, senha: string, type: string): Promise<any> {
+  login(email: string, senha: string): Promise<any> {
     const user = await this.clienteRepository.findOne(email);
     if (user && user.senha === senha) {
       const { password, ...result } = user;
