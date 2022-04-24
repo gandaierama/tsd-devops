@@ -14,6 +14,16 @@ export class ClienteService {
     private clienteRepository: Repository<ClienteEntity>,
   ) {}
 
+
+  async validateUser(email: string, senha: string, type: string): Promise<any> {
+    const user = await this.clienteRepository.findOne(email);
+    if (user && user.senha === senha) {
+      const { password, ...result } = user;
+      return result;
+    }
+    return null;
+  }
+
   create(createClienteDto: CreateClienteDto): Promise<ClienteEntity> {
     const obje = new ClienteEntity();
     obje.name = createClienteDto.name;
