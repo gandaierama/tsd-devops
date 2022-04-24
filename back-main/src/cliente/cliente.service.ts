@@ -18,7 +18,7 @@ export class ClienteService {
   async login(email: string, senha: string): Promise<any> {
     const user = await this.clienteRepository.findOne(email);
     if (user && user.senha === senha) {
-      const { password, ...result } = user;
+      const { senha, ...result } = user;
       return result;
     }
     return null;
