@@ -19,7 +19,7 @@ export class ClienteController {
 
   @Post()
   login(@Body() email: string, senha: string) {
-    return this.clienteService.create(email, senha);
+    return this.clienteService.login(email, senha);
   }
 
   @Get(':id')
