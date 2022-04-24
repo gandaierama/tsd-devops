@@ -29,6 +29,7 @@ export class ClienteService {
     obje.name = createClienteDto.name;
     obje.email = createClienteDto.email;
     obje.telefone = createClienteDto.telefone;
+    obje.senha = createClienteDto.senha;
     obje.cpf = createClienteDto.cpf;
     obje.cnpj = createClienteDto.cnpj;
 

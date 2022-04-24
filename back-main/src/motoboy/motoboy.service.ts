@@ -23,6 +23,7 @@ export class MotoboyService {
     obje.email = createMotoboyDto.email;
     obje.telefone = createMotoboyDto.telefone;
     obje.cpf = createMotoboyDto.cpf;
+    obje.senha = createMotoboyDto.senha;
     obje.cnpj = createMotoboyDto.cnpj;
 
     return this.motoboyRepository.save(obje);
