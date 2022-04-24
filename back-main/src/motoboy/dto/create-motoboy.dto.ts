@@ -9,6 +9,9 @@ export class CreateMotoboyDto {
   	@ApiProperty({ required: false, default: null })
   	email: string;
 
+    @ApiProperty({ required: false, default: null })
+    senha: string;
+
   	@ApiProperty({ required: false, default: null })
   	cpf: string;
 
