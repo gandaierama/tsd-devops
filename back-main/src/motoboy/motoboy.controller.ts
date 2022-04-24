@@ -17,11 +17,11 @@ export class MotoboyController {
     return this.motoboyService.findAll();
   }
 
-  @Post()
+  @Post('/login')
   login(@Body() email: string, senha: string) {
     return this.motoboyService.login(email, senha);
   }
-  
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.motoboyService.findOne(id);

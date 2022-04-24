@@ -17,7 +17,7 @@ export class ClienteController {
     return this.clienteService.findAll();
   }
 
-  @Post()
+  @Post('/login')
   login(@Body() email: string, senha: string) {
     return this.clienteService.login(email, senha);
   }

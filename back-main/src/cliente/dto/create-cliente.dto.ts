@@ -11,7 +11,7 @@ export class CreateClienteDto {
   	cpf: string;
 
     @ApiProperty({ required: false, default: "99999999999" })
-    cpf: string;
+    senha: string;
 
   	@ApiProperty({ required: false, default: "99999999999999" })
   	cnpj: string;
