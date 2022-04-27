@@ -17,11 +17,12 @@ export class ClienteService {
 
   async login(email: string, senha: string): Promise<any> {
     const user = await this.clienteRepository.findOne(email);
+    return user;
     if (user && user.senha === senha) {
       const { senha, ...result } = user;
       return result;
     }
-    return `error #${user} ordem`;;
+    return `error #${user} ordem`;
   }
 
   create(createClienteDto: CreateClienteDto): Promise<ClienteEntity> {
