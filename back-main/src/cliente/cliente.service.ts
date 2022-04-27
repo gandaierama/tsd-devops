@@ -18,11 +18,11 @@ export class ClienteService {
   async login(email: string, senha: string): Promise<any> {
     const user = await this.clienteRepository.findOne(email);
 
-    if (user && user.senha === senha) {
+    if (user) {
       const { senha, ...result } = user;
       return result;
     }
-        return [user:user.senha,senha: senha];
+        return senha;
   }
 
   create(createClienteDto: CreateClienteDto): Promise<ClienteEntity> {
