@@ -22,7 +22,7 @@ export class ClienteService {
       const { senha, ...result } = user;
       return result;
     }
-        return {user:user.senha,senha: senha};
+        return [user:user.senha,senha: senha];
   }
 
   create(createClienteDto: CreateClienteDto): Promise<ClienteEntity> {
