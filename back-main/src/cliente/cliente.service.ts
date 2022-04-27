@@ -21,7 +21,7 @@ export class ClienteService {
       const { senha, ...result } = user;
       return result;
     }
-    return null;
+    return `error #${user} ordem`;;
   }
 
   create(createClienteDto: CreateClienteDto): Promise<ClienteEntity> {
