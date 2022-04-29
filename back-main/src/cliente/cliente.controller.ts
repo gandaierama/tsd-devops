@@ -2,7 +2,7 @@ import { Controller, Request,Get, UseGuards, Post, Body, Patch, Param, Delete } 
 import { ClienteService } from './cliente.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
-import { AuthService } from '../auth/auth.service';
+
 
 import { AuthGuard } from '@nestjs/passport';
 @Controller('cliente')
