@@ -4,11 +4,9 @@ import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
 
 
-import { AuthGuard } from '@nestjs/passport';
 @Controller('cliente')
 export class ClienteController {
   constructor(private readonly clienteService: ClienteService) {}
-
 
 
   @Post()
