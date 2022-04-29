@@ -12,11 +12,7 @@ export class ClienteController {
 
     ) {}
 
-  @UseGuards(AuthGuard('local'))
-  @Post('auth/login')
-  async login(@Request() req) {
-    return req.user;
-  }
+
 
   @Post()
   create(@Body() createClienteDto: CreateClienteDto) {
