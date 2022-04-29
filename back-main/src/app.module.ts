@@ -13,6 +13,7 @@ import { PixModule } from './pix/pix.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { PeriodoModule } from './periodo/periodo.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -25,7 +26,7 @@ import { UserModule } from './user/user.module';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-  ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule, PeriodoModule, UserModule],
+  ClienteModule, MotoboyModule, PagamentoModule, OrdemModule, EntregaModule, OcorrenciaModule, PixModule, PeriodoModule, UserModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

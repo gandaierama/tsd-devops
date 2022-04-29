@@ -1,11 +1,22 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Request,Get, UseGuards, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ClienteService } from './cliente.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
+import { AuthService } from '../auth/auth.service';
 
+import { AuthGuard } from '@nestjs/passport';
 @Controller('cliente')
 export class ClienteController {
-  constructor(private readonly clienteService: ClienteService) {}
+  constructor(private readonly clienteService: ClienteService,
+    private authService: AuthService
+
+    ) {}
+
+  @UseGuards(AuthGuard('local'))
+  @Post('auth/login')
+  async login(@Request() req) {
+    return req.user;
+  }
 
   @Post()
   create(@Body() createClienteDto: CreateClienteDto) {
