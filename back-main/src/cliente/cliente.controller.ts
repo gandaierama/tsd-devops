@@ -7,10 +7,7 @@ import { AuthService } from '../auth/auth.service';
 import { AuthGuard } from '@nestjs/passport';
 @Controller('cliente')
 export class ClienteController {
-  constructor(private readonly clienteService: ClienteService,
-    private authService: AuthService
-
-    ) {}
+  constructor(private readonly clienteService: ClienteService) {}
 
 
 
