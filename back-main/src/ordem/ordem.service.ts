@@ -33,11 +33,11 @@ export class OrdemService {
     return `This action updates a #${id} ordem`;
   }
 
-  findAll(): Promise<ClienteEntity[]> {
+  findAll(): Promise<OrdemEntity[]> {
     return this.ordemRepository.find();
   }
 
-  findOne(id: string): Promise<ClienteEntity> {
+  findOne(id: string): Promise<OrdemEntity> {
     return this.ordemRepository.findOne(id);
   }
 
