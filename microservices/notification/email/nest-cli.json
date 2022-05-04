@@ -2,7 +2,7 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "assets": ["mail/templates/**/*"], // 👈  or "**/*.hbs" all files ending with .hbs
-    "watchAssets": true // 🤖 copy assets in watch mode
+    "assets": ["mail/templates/**/*"], 
+    "watchAssets": true 
   }
 }
