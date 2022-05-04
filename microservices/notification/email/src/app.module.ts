@@ -5,6 +5,7 @@ import { SendModule } from './send/send.module';
 import { SubscriptModule } from './subscript/subscript.module';
 import { UnsubscriptModule } from './unsubscript/unsubscript.module';
 import { TypeOrmModule } from '@nestjs/typeorm'
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-  SendModule, SubscriptModule, UnsubscriptModule],
+  SendModule, SubscriptModule, UnsubscriptModule, MailModule],
   controllers: [AppController],
   providers: [AppService],
 })
