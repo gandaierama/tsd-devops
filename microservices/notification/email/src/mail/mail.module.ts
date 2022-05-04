@@ -10,15 +10,16 @@ import { join } from 'path';
       // transport: 'smtps://user@example.com:topsecret@smtp.example.com',
       // or
       transport: {
-        host: 'smtp.example.com',
+        host: 'smtp.gmail.com',
+        port: 587,
         secure: false,
         auth: {
-          user: 'user@example.com',
+          user: 'terceirizeseudelivery@gmail.com',
           pass: 'topsecret',
         },
       },
       defaults: {
-        from: '"No Reply" <noreply@example.com>',
+        from: '"No Reply" <noreply@tsdmotoboys.com>',
       },
       template: {
         dir: join(__dirname, 'templates'),

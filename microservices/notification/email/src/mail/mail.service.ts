@@ -6,8 +6,8 @@ import { Injectable } from '@nestjs/common';
 export class MailService {
   constructor(private mailerService: MailerService) {}
 
-  async sendUserConfirmation(user: User, token: string) {
-    const url = `example.com/auth/confirm?token=${token}`;
+  async sendUserConfirmation() {
+    const url = `example.com/auth/confirm?token=`;
 
     await this.mailerService.sendMail({
       to: "danielbatistagalvao@hotmail.com",
