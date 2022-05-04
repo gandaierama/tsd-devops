@@ -17,13 +17,13 @@ export class OrdemService {
 
 
   create(createOrdemDto: CreateOrdemDto): Promise<OrdemEntity> {
-    const obje = new ClienteEntity();
-    obje.name = createClienteDto.name;
-    obje.cliente = createClienteDto.cliente;
-    obje.periodo = createClienteDto.periodo;
-    obje.days = createClienteDto.days;
-    obje.diaria = createClienteDto.diaria;
-    obje.entrega = createClienteDto.entrega;
+    const obje = new OrdemEntity();
+    obje.name = createOrdemDto.name;
+    obje.cliente = createOrdemDto.cliente;
+    obje.periodo = createOrdemDto.periodo;
+    obje.days = createOrdemDto.days;
+    obje.diaria = createOrdemDto.diaria;
+    obje.entrega = createOrdemDto.entrega;
 
     return this.ordemRepository.save(obje);
   }
