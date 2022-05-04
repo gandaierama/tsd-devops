@@ -14,8 +14,8 @@ import { join } from 'path';
         port: 587,
         secure: false,
         auth: {
-          user: 'terceirizeseudelivery@gmail.com',
-          pass: 'topsecret',
+          user: 'gandaierama@gmail.com',
+          pass: 'a1b9c5741852daniel@',
         },
       },
       defaults: {
