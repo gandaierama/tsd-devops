@@ -11,11 +11,12 @@ import { join } from 'path';
       // or
       transport: {
         host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
+        port: 465,
+       ignoreTLS: true,
+       secure: true,
         auth: {
           user: 'gandaierama@gmail.com',
-          pass: 'a1b9c5741852daniel@',
+          pass: 'vddccedwvujxjgfy',
         },
       },
       defaults: {
